@@ -1,3 +1,5 @@
+package solutions;
+
 import java.util.*;
 
 // HackerRank

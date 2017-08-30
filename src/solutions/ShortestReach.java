@@ -1,3 +1,7 @@
+package solutions;
+
+import helpers.Node;
+
 import java.util.*;
 
 // HackerRank

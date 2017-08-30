@@ -1,4 +1,4 @@
-
+package solutions;
 // HackerRank
 // https://www.hackerrank.com/challenges/two-arrays
 
