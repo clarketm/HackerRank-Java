@@ -1,43 +1,44 @@
 package solutions.CrackingTheCodingInterview;
 
 // HackerRank
-// https://www.hackerrank.com/challenges/ctci-array-left-rotation
+// https://www.hackerrank.com/challenges/ctci-is-binary-search-tree
 
 public class CheckBST {
 
     public static void main(String[] args) {
-        Node childLeft = new Node(1, null, null);
-        Node childRight = new Node(3, null, null);
-        Node root = new Node(2, childLeft, childRight);
+        Node childLeftLeft = new Node(1, null, null);
+        Node childLeftRight = new Node(3, null, null);
+        Node childLeft = new Node(2, childLeftLeft, childLeftRight);
 
-        boolean isBST = new CheckBST().checkBST(root);
+        Node childRightLeft = new Node(5, null, null);
+        Node childRightRight = new Node(7, null, null);
+        Node childRight = new Node(6, childRightLeft, childRightRight);
+
+        Node root = new Node(4, childLeft, childRight);
+
+        boolean isBST = new CheckBST().isValidBST(root);
         System.out.println(isBST ? "Yes" : "No");
     }
 
-    private boolean checkBST(Node root) {
-        return checkLeft(root.data, root.left) && checkRight(root.data, root.right);
+    private boolean isValidBST(Node root) {
+        return checkNode(root.left, Integer.MIN_VALUE, root.data) && checkNode(root.right, root.data, Integer.MAX_VALUE);
     }
 
-    private boolean checkLeft(int parentData, Node child) {
-        if (child == null) {
-            return true;
-        }
-        if (child.data > parentData) {
-            return false;
-        }
-        return checkBST(child);
-        // OR: return child == null || child.data <= parentData && checkBST(child);
+    private boolean isValidBST(Node node, int minValue, int maxValue) {
+        return checkNode(node.left, minValue, node.data) && checkNode(node.right, node.data, maxValue);
     }
 
-    private boolean checkRight(int parentData, Node child) {
-        if (child == null) {
+    private boolean checkNode(Node node, int minValue, int maxValue) {
+        if (node == null) {
+            // reached the end of the branch (no more nodes to check)
             return true;
-        }
-        if (child.data < parentData) {
+        } else if (node.data > minValue && node.data < maxValue) {
+            // node data is within the min/max constraints
+            return isValidBST(node, minValue, maxValue);
+        } else {
+            // node data is NOT within the min/max constraints
             return false;
         }
-        return checkBST(child);
-        // OR: return child == null || child.data >= parentData && checkBST(child);
     }
 
 }
