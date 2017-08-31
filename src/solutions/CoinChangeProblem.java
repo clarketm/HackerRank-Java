@@ -1,6 +1,5 @@
 package solutions;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -27,18 +26,6 @@ public class CoinChangeProblem {
 
         if (numCoinToUse <= 0)
             return 0;
-
-        // 1:
-        // amountRemaining: {{5}}
-        // numCoinToUse: 2 - 1 = {{1}}
-        // coinDenominations: {{[1, 5]}}
-        // --
-
-        // 2:
-        // amountRemaining: 5 - [1, 5][0] = 5 - 1 = {{4}}
-        // numCoinToUse: {{2}}
-        // coinDenominations: {{[1, 5]}}
-        // --
 
         long result = getWays(amountRemaining, numCoinToUse - 1, coinDenominations)
                 + getWays(amountRemaining - coinDenominations[numCoinToUse - 1], numCoinToUse, coinDenominations);
