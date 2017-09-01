@@ -5,6 +5,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
 
+// HackerRank
+// https://www.hackerrank.com/challenges/ctci-balanced-brackets
+
 public class BalancedBrackets {
     private static Map<Character, Character> matches = new HashMap<>();
 
