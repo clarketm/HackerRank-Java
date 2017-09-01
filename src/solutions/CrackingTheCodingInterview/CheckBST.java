@@ -5,6 +5,18 @@ package solutions.CrackingTheCodingInterview;
 
 public class CheckBST {
 
+    static class Node {
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data, Node left, Node right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public static void main(String[] args) {
         Node childLeftLeft = new Node(1, null, null);
         Node childLeftRight = new Node(3, null, null);
@@ -43,15 +55,4 @@ public class CheckBST {
 
 }
 
-class Node {
-    int data;
-    Node left;
-    Node right;
-
-    Node(int data, Node left, Node right) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-    }
-}
 
