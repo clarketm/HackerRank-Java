@@ -11,13 +11,12 @@ public class DavisStaircase {
         int s = in.nextInt();
         for (int a0 = 0; a0 < s; a0++) {
             int n = in.nextInt();
-            int ways = countWays(n, '0');
+            int ways = countWays(n);
             System.out.println(ways);
         }
     }
 
-    private static int countWays(int numStairs, char v) {
-        System.out.println(v);
+    private static int countWays(int numStairs) {
         if (memo.containsKey(numStairs)) {
             return memo.get(numStairs);
         }
@@ -28,7 +27,7 @@ public class DavisStaircase {
             return 1;
         }
 
-        int ways = countWays(numStairs - 1, '1') + countWays(numStairs - 2, '2') + countWays(numStairs - 3, '3');
+        int ways = countWays(numStairs - 1) + countWays(numStairs - 2) + countWays(numStairs - 3);
         memo.put(numStairs, ways);
 
         return ways;
