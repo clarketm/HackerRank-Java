@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
+// HackerRank
+// https://www.hackerrank.com/challenges/ctci-comparator-sorting
+
 public class SortComparator {
 
     static class Player {

@@ -2,6 +2,9 @@ package solutions;
 
 import java.util.Scanner;
 
+// HackerRank
+// https://www.hackerrank.com/challenges/30-arrays
+
 public class Arrays {
 
     public static void main(String[] args) {

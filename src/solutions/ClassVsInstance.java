@@ -2,6 +2,9 @@ package solutions;
 
 import java.util.Scanner;
 
+// HackerRank
+// https://www.hackerrank.com/challenges/30-class-vs-instance
+
 public class ClassVsInstance {
 
     public static void main(String[] args) {

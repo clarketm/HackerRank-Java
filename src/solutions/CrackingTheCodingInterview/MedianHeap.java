@@ -5,6 +5,10 @@ import helpers.MinHeap;
 
 import java.util.Scanner;
 
+
+// HackerRank
+// https://www.hackerrank.com/challenges/ctci-find-the-running-median
+
 public class MedianHeap {
     private MinHeap upper = new MinHeap();
     private MaxHeap lower = new MaxHeap();
