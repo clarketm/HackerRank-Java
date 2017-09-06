@@ -1,6 +1,7 @@
 package solutions;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 // HackerRank
 // https://www.hackerrank.com/challenges/greedy-florist
