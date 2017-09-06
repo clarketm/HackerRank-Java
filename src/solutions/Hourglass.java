@@ -2,6 +2,9 @@ package solutions;
 
 import java.util.Scanner;
 
+// HackerRank
+// https://www.hackerrank.com/challenges/2d-array
+
 public class Hourglass {
     public static final int MATRIX_SIZE = 6;
 
