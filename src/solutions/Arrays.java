@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 // HackerRank
 // https://www.hackerrank.com/challenges/30-arrays
+// https://www.hackerrank.com/challenges/arrays-ds
 
 public class Arrays {
 
