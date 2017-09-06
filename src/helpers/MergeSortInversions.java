@@ -1,25 +1,10 @@
 package helpers;
 
-public class MergeSort {
+public class MergeSortInversions extends MergeSort {
+    private long inversions;
 
-    protected int[] array;
-
-    public void sort(int[] values) {
-        this.array = values;
-        mergesort(0, values.length - 1);
-    }
-
-    protected void mergesort(int low, int high) {
-        if (low < high) {
-            int mid = low + (high - low) / 2;
-            mergesort(low, mid);
-            mergesort(mid + 1, high);
-            merge(low, mid, high);
-        }
-    }
-
+    @Override
     protected void merge(int low, int mid, int high) {
-
         int p = low;
         int q = mid + 1;
 
@@ -38,6 +23,7 @@ public class MergeSort {
                 p++;
             } else if (array[q] <= array[p]) {
                 _array[k] = array[q];
+                inversions += (q - k) - low;
                 q++;
             }
             k++;
@@ -45,11 +31,8 @@ public class MergeSort {
         copyToArray(k, low, _array);
     }
 
-    protected void copyToArray(int k, int low, int[] _array) {
-        for (int i = 0; i < k; i++) {
-            array[low] = _array[i];
-            low++;
-        }
+    public long getInversions() {
+        return inversions;
     }
 
 }
