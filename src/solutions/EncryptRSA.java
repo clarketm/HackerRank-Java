@@ -2,28 +2,25 @@ package solutions;
 
 import helpers.EuclideanGCD;
 
-import java.util.Map;
+import java.math.BigInteger;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class EncryptRSA {
-    public static final int DIVISOR = (int) Math.pow(10, 9) + 7;
+    public static final long DIVISOR = (long) Math.pow(10, 9) + 7;
 
     public static void main(String[] args) {
-        TreeMap<Integer, Integer> unconcealed = new TreeMap<>();
-
         Scanner in = new Scanner(System.in);
-        int p = in.nextInt();
-        int q = in.nextInt();
-        int n = p * q;
-        int phi = (p - 1) * (q - 1);
+        long p = in.nextInt();
+        long q = in.nextInt();
+        long n = p * q;
+        long phi = (p - 1) * (q - 1);
 
-        int gcd;
+        long min = Long.MAX_VALUE;
+        BigInteger sum = new BigInteger("0");
 
-        for (int e = 2; e < phi; e++) {
-            gcd = new EuclideanGCD(e, phi).getGCD();
-            if (gcd == 1) {
-                // possible `e`
+        for (long e = 2; e < phi; e++) {
+            // possible `e`
+            if (new EuclideanGCD(e, phi).getGCD() == 1) {
 
                 // encrypt:
                 // where (c % n) == (m^e % n)
@@ -34,20 +31,18 @@ public class EncryptRSA {
 
                 // (m^e % n) == (m % n)
 
-                int c = 0;
-                for (int m = 0; m < n; m++) {
-                    double _c = Math.pow(m, e) % (double) n;
-                    if ((int) _c == m) {
-                        c++;
-                    }
+                long unconcealed = (new EuclideanGCD(e - 1, p - 1).getGCD() + 1)
+                        * (new EuclideanGCD(e - 1, q - 1).getGCD() + 1);
+
+                if (unconcealed < min) {
+                    min = unconcealed;
+                    sum = BigInteger.valueOf(e);
+                } else if (unconcealed == min) {
+                    sum = BigInteger.valueOf(e).add(sum);
                 }
-                unconcealed.put(e, c);
             }
         }
-
-        for (Map.Entry<Integer, Integer> entry : unconcealed.entrySet()) {
-            System.out.printf("%d->%d\n", entry.getKey(), entry.getValue());
-        }
+        System.out.println(sum.mod(BigInteger.valueOf(DIVISOR)));
     }
 
 }

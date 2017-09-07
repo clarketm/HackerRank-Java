@@ -1,19 +1,19 @@
 package helpers;
 
 public class EuclideanGCD {
-    private int max;
-    private int min;
+    private long max;
+    private long min;
 
-    public EuclideanGCD(int a, int b) {
+    public EuclideanGCD(long a, long b) {
         max = a > b ? a : b;
         min = a > b ? b : a;
     }
 
-    public int getGCD() {
+    public long getGCD() {
         return computeGCD(max, min);
     }
 
-    private int computeGCD(int a, int b) {
+    private long computeGCD(long a, long b) {
         if (a == 0) {
             return b;
         }
