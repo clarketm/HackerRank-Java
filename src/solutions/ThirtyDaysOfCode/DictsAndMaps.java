@@ -1,4 +1,4 @@
-package solutions;
+package solutions.ThirtyDaysOfCode;
 
 import java.util.HashMap;
 import java.util.Scanner;
