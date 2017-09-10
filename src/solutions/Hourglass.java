@@ -24,7 +24,6 @@ public class Hourglass {
         for (int r = 0; r < MATRIX_SIZE - 2; r++) {
             for (int c = 0; c < MATRIX_SIZE - 2; c++) {
                 sum = hg.calculateSum(r, c);
-                System.out.println(sum);
                 max = sum > max ? sum : max;
             }
         }
