@@ -1,6 +1,6 @@
 package algorithms.ThirtyDaysOfCode;
 
-import solutions.Hourglass;
+import algorithms.Hourglass;
 
 // HackerRank
 // https://www.hackerrank.com/challenges/30-2d-arrays/problem
