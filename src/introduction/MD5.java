@@ -15,8 +15,7 @@ public class MD5 {
         String s = in.next();
 
         MessageDigest md5 = MessageDigest.getInstance("MD5");
-        md5.update(s.getBytes());
-        byte[] digest = md5.digest();
+        byte[] digest = md5.digest(s.getBytes());
         String hash = DatatypeConverter.printHexBinary(digest).toLowerCase();
 
         System.out.println(hash);
