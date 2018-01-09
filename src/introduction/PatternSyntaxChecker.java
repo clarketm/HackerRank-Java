@@ -1,7 +1,7 @@
 package introduction;
 
-        import java.util.Scanner;
-        import java.util.regex.Pattern;
+import java.util.Scanner;
+import java.util.regex.Pattern;
 
 // Pattern Syntax Checker
 // https://www.hackerrank.com/challenges/pattern-syntax-checker/problem
