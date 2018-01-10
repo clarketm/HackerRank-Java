@@ -2,10 +2,10 @@ package data_structures;
 
 import java.util.Scanner;
 
-// Java 1D Array
+// Java 1D Array (Part 1)
 // https://www.hackerrank.com/challenges/java-1d-array-introduction/problem
 
-public class OneDimensionalArray {
+public class OneDimensionalArrayPart1 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
